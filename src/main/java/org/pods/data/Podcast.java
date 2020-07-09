@@ -8,7 +8,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="podcast")
 public class Podcast {
-	
+	/*
+		Part of the data layer, this object is directly related to the database table `podcast`
+	*/
 	@Id
 	@GeneratedValue
 	private int Id;

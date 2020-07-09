@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+//Each request to the data layer would include data in this class. Assuming every other type of request would include a Genre/Region
+//realistically this could be more abstracted out. 
+//I used this as an example of how inheritance would come in handy here.
 public class BaseRequest {
 	
 	private String genre;

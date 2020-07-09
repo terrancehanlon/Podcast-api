@@ -2,6 +2,7 @@ package org.pods.util;
 
 import java.util.List;
 
+//derived class of BaseResponse
 public class PodcastResponse extends BaseResponse {
 		
 	public PodcastResponse() {
@@ -10,7 +11,6 @@ public class PodcastResponse extends BaseResponse {
 	
 	public PodcastResponse(List<BaseResponseObject> responseObjects) {
 		super(responseObjects);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void addPodcast(PodcastResponseObject podcastResponseObject) {

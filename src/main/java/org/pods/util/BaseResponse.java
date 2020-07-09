@@ -3,6 +3,7 @@ package org.pods.util;
 import java.util.ArrayList;
 import java.util.List;
 
+//Each response to the client would have the data associated with this class
 public class BaseResponse {
 	
 	List<BaseResponseObject> responseObjects;

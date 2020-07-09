@@ -1,5 +1,6 @@
 package org.pods;
 
+import org.pods.data.*;
 import org.pods.service.PodcastService;
 import org.pods.util.PodcastRequest;
 import org.pods.util.PodcastResponse;
@@ -15,22 +16,29 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Iterator;
 @Controller
 public class PodcastController {
 	
 	@Autowired
 	private PodcastService podcastService;
 	
-	@RequestMapping(value="best_podcast", method= RequestMethod.GET)
-	public @ResponseBody PodcastResponse getBestPodcasts(	@RequestParam("genre_id") String genreId,
-														@RequestParam("page") String page,
-														@RequestParam("region") String region,
-														@RequestParam("safe_mode") String safeMode
+	@RequestMapping(value="best_podcasts", method= RequestMethod.GET)
+	public @ResponseBody PodcastResponse getBestPodcasts(@RequestParam("genre_id") String genreId,
+														 @RequestParam("page") String page,
+														 @RequestParam("region") String region,
+														 @RequestParam("safe_mode") String safeMode
 													  )
 	{					
 			podcastService.incrementClicks();
 			PodcastRequest fullRequest = podcastService.formRequest(genreId, region);
 			return podcastService.getResponse(fullRequest);
 	}
+
+	@RequestMapping(value="test", method = RequestMethod.GET)
+	public @ResponseBody Iterable<Podcast> getAll(){
+		return podcastService.getBestPodcastList();
+	}
+
 	
 }

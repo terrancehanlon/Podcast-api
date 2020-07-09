@@ -1,7 +1,13 @@
 package org.pods.mappers;
 
-public interface BaseMapper {
+import org.pods.util.*;
+import org.pods.data.*;
+import java.util.List;
 
-//	public BaseRequest mapRequest()
+//base mapper interface, this way we could have a mapper class for each different type of request.
+public interface BaseMapper {
+    
+    public PodcastResponse finalizeResponse(List<Podcast> podcasts);
+    public PodcastRequest finalizeRequest(String genre, String region);
 	
 }
