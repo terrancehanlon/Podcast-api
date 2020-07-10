@@ -57,8 +57,8 @@ INSERT INTO `PODCAST`.`podcast`
 `region`)
 VALUES
 (10005,
-"link.com"
-".Web devs unite",
+"link.com",
+"Web devs unite",
 "For web developers",
 "www.wdunite.com",
 "5",
