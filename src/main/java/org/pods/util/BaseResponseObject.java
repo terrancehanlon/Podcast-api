@@ -27,6 +27,12 @@ public class BaseResponseObject {
 	@JsonProperty("extra")
 	private ExtraObject ob;
 	
+	@JsonProperty("looking_for")
+	private LookingFor lf;
+	
+	@JsonProperty("genre_ids")
+	private int[] genreIds;
+	
 	public BaseResponseObject(
 			String name, String genre, String link, String imageLink, String description,
 			int totalEps, long latestPubDate, long earlPubDate) {
@@ -44,6 +50,11 @@ public class BaseResponseObject {
 		this.earlPubDate = earlPubDate;
 		
 		ob = new ExtraObject();
+		lf = new LookingFor();
+		
+		genreIds = new int[2];
+		genreIds[0] = 1;
+		genreIds[1] = 2;
 	}
 	public String getName() {
 		return name;
