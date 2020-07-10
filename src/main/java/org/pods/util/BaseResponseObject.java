@@ -2,7 +2,7 @@ package org.pods.util;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-//Since the get request is to getting a list of podcasts, I figured it would be best to have each object in the list
+//Since the get request is getting a list of podcasts, I figured it would be best to have each object in the list
 //be it's own `response object`, that way it would be neater and easier to follow if there were different types of responses.
 
 public class BaseResponseObject {
