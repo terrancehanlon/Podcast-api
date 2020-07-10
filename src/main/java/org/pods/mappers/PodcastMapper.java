@@ -11,6 +11,28 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PodcastMapper implements BaseMapper{
+	
+	
+	//these functions would be in another service
+	public static String getLanguageByRegion(String region) {
+		return "English";
+	}
+	
+	public long getEariestDate(int id) {
+		return 100005;
+	}
+	
+	public long getLatestDate(int id) {
+		return 900005;
+	}
+	
+	public int getEpCount(int id) {
+		return 8;
+	}
+	
+	public String findCountryById(int id) {
+		return "USA";
+	}
 
 	/* 
 		implementation of the basemapper interface. 
@@ -24,14 +46,18 @@ public class PodcastMapper implements BaseMapper{
 	
 	//The data layer will return the entity type, in this case it's of type Podcast.
 	//So this function maps those Podcast objects to a PodcastResponse object, showing the values we want to the client.
-	public PodcastResponse finalizeResponse(List<Podcast> podcasts) {
+	public PodcastResponse finalizeResponse(List<Podcast> _podcasts) {
 		
 		PodcastResponse response = new PodcastResponse();
 		
-		for(Podcast podcast : podcasts) {
-			PodcastResponseObject responseObject = new PodcastResponseObject(	podcast.getname(), podcast.getGenre(), 
-																				podcast.getLink(), podcast.getImage(), podcast.getDescrip());
-			response.addPodcast(responseObject);
+		for(Podcast podcast : _podcasts) {
+			PodcastResponseObject  responseObj = new PodcastResponseObject(	podcast.getname(), podcast.getGenre(), 
+																				podcast.getLink(), podcast.getImage(), podcast.getDescrip(),
+																			getEpCount(podcast.getId()), getLatestDate(podcast.getId()), getEariestDate(podcast.getId()));
+			responseObj.setLangauge(getLanguageByRegion(podcast.getRegion()));
+			responseObj.setCountry(findCountryById(podcast.getId()));
+			
+			response.addPodcast(responseObj);
 		}
 		
 		return response;
