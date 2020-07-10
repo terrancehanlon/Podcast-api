@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class PodcastMapper implements BaseMapper{
 	
 	
-	//these functions would be in another service
+	//these functions would be in another service or could be retireved from the data layer and eventually mapped. I decided to put the logic in here rather than create another service/pull from the data layer
 	public static String getLanguageByRegion(String region) {
 		return "English";
 	}
