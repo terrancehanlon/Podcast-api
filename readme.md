@@ -8,12 +8,12 @@ To run:
 
 Then go to link http://localhost:8080/api/best_podcasts?genre_id=web&page=1&region=us&safe_mode=1
 
-API layer -> <a href="https://github.com/terrancehanlon/Podcast-api/blob/master/src/main/java/org/pods/PodcastController.java"> PodcastController </a>
-Service Layer -> <a href="https://github.com/terrancehanlon/Podcast-api/tree/master/src/main/java/org/pods/service"> Main Service </a>
-                 <a href="https://github.com/terrancehanlon/Podcast-api/tree/master/src/main/java/org/pods/mappers"> Mappers </a>
+API layer -> <a href="https://github.com/terrancehanlon/Podcast-api/blob/master/src/main/java/org/pods/PodcastController.java"> PodcastController </a> <br/>
+Service Layer -> <a href="https://github.com/terrancehanlon/Podcast-api/tree/master/src/main/java/org/pods/service"> Main Service </a> <br/>
+                 <a href="https://github.com/terrancehanlon/Podcast-api/tree/master/src/main/java/org/pods/mappers"> Mappers </a> <br/>
                  
-Domain Layer -> <a href="https://github.com/terrancehanlon/Podcast-api/tree/master/src/main/java/org/pods/util"> Domain Objects </a>
-Data Layer -> <a href="https://github.com/terrancehanlon/Podcast-api/tree/master/src/main/java/org/pods/data"> Data Objects </a>
+Domain Layer -> <a href="https://github.com/terrancehanlon/Podcast-api/tree/master/src/main/java/org/pods/util"> Domain Objects </a> <br/>
+Data Layer -> <a href="https://github.com/terrancehanlon/Podcast-api/tree/master/src/main/java/org/pods/data"> Data Objects </a> <br/>
 
 
 The PodcastController takes in the raw request from the client. Sends it to the service layer for business logic, then to the mapper to transform into the correct domain object. 
